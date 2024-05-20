@@ -12,7 +12,7 @@ const DisclaimerModal: React.FC<DisclaimerModalProps> = ({ isOpen, onClose }) =>
 
 
   return (
-    <div id="disclaimer" className="absolute top-[40%] left-[30%] md:left-[40%] p-3 border border-1 border-black w-[300px] h-[300px]">
+    <div id="disclaimer" className="absolute top-[40%] left-[15%] md:left-[40%] p-3 border border-1 border-black w-[300px] h-[300px]">
       <div onClick={onClose} className="flex justify-end mr-5px mb-10px">x</div>
       <div className="text-center">
         Non subscribers will need to provide their own unique api key from sports data io.
