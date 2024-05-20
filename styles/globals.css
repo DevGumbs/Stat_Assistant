@@ -1,0 +1,116 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --background-color: #ffffff; /* default background color */
+  --text-color: #030303; /* default text color */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body * {
+  border-color: var(--text-color) !important;
+}
+
+body h1{
+  background-color: var(--background-color);
+  color: var(--text-color);  
+}
+
+body img {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.dark-mode {
+  --background-color: #030303;
+  --text-color: #ffffff;
+}
+
+.ballIcon {
+  fill: var(--text-color);
+}
+
+#playerList::-webkit-scrollbar {
+  width: none;
+}
+
+#team_positionSelection option{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#teamList::-webkit-scrollbar {
+  width: none;
+}
+
+#slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #030303;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#checkboxInput:checked + #slider {
+  background-color: #f7f8f8;
+}
+
+#checkboxInput:focus + #slider {
+  box-shadow: 0 0 1px #f7f8f8;
+}
+
+#checkboxInput:checked + #slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #030303;
+}
+#disclaimer {  
+  --specific-background-color: #030303;
+  --specific-text-color: #ffffff;
+  background-color: var(--specific-background-color);
+  color: var(--specific-text-color);
+}
+
+.dark-mode #disclaimer {
+  --specific-background-color: #ffffff;
+  --specific-text-color: #030303;
+}
+
+.modal {  
+  --specific-background-color: #030303;
+  --specific-text-color: #ffffff;
+  background-color: var(--specific-background-color);
+  color: var(--specific-text-color);
+  border-color: var(--specific-border-color) !important;
+}
+
+.dark-mode .modal {
+  --specific-background-color: #ffffff;
+  --specific-text-color: #030303;
+  --specific-border-color: #030303;
+}

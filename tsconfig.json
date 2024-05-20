@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "mockData/activeTeams.js", "mockData/activePlayers.js", "lib/stripeUtil.js", "lib/prisma.js"],
   "exclude": ["node_modules"]
 }

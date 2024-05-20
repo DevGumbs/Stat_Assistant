@@ -1,0 +1,41 @@
+
+.index_sportSelection {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+.index_welcomeNote {
+  text-align: center;
+}
+.index_suscriberStatus {
+  background-color: yellow;
+  width: 10%;
+  margin: 0 auto;
+}
+.index_welcomeDisclaimer {
+  font-size: smaller;
+}
+.index_disclaimerModal {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid .5px black;
+  z-index: 5;
+  width: 210px;
+  height: 210px;  
+  background-color: white;
+  color: black;
+}
+.index_disclaimerX {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 5px 10px 0;
+}
+.index_disclaimerMessage {
+  text-align: center;
+}
+.index_disclaimerClose {
+  margin: 15px 0;
+  text-decoration: underline;
+}
