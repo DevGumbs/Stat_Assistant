@@ -28,7 +28,7 @@ const PlayerNbaComponent:React.FC<ComponentProps> = ({activePlayers, apiKey}) =>
   }, [position, activePlayers]);
 
   return (
-    <div className="w-full max-w-2xl mx-auto shadow-xl rounded-xl p-6 md:p-10 border-t-8 border-blue-700 dark:border-yellow-400 mt-4">
+    <div className="w-full max-w-2xl mx-auto shadow-xl rounded-xl p-6 md:p-10 border border-gray-300 dark:border-gray-600 border-l-8 border-l-blue-700 dark:border-l-yellow-400 mt-4">
       <div className="text-center">
         <div>
           <div className="text-2xl my-6 font-bold text-blue-900 dark:text-yellow-400 underline">Find a Player</div>

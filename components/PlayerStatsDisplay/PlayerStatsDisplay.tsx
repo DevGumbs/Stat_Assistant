@@ -9,7 +9,7 @@ interface ComponentProps {
 
 const PlayerStatsDisplay:React.FC<ComponentProps> = ({playerStats, gameNum}) => {
   return (
-    <div className="text-xl mt-10 w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border-l-8 border-blue-700 dark:border-yellow-400">
+    <div className="text-xl mt-10 w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border border-gray-300 dark:border-gray-600 border-l-8 border-l-blue-700 dark:border-l-yellow-400">
       <div className="text-center mb-4">
         <p className="text-3xl font-extrabold text-blue-700 dark:text-yellow-400">Game {gameNum}</p>
       </div>

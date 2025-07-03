@@ -158,7 +158,7 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
   }, [playerStats, totalGames]);
   
   return ( 
-    <div className="w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border-l-8 border-blue-700 dark:border-yellow-400 mt-6">
+    <div className="w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border border-gray-300 dark:border-gray-600 border-l-8 border-l-blue-700 dark:border-l-yellow-400 mt-6">
       <div>
         <h4 className="text-center text-xl font-bold text-blue-900 dark:text-yellow-400 mb-4">{playerStats[0].Name}&apos;s averages over the last {totalGames} game(s)</h4>
       </div>

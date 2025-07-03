@@ -17,7 +17,7 @@ const TeamNbaComponent:React.FC<ComponentProps> = ({activeNbaTeams, apiKey}) => 
   const [showLast5Games, setShowLast5Games] = useState(false) 
 
   return (
-    <div className="w-full max-w-2xl mx-auto shadow-xl rounded-xl p-6 md:p-10 border-t-8 border-red-700 dark:border-yellow-400 mt-4">
+    <div className="w-full max-w-2xl mx-auto shadow-xl rounded-xl p-6 md:p-10 border border-gray-300 dark:border-gray-600 border-l-8 border-l-red-700 dark:border-l-yellow-400 mt-4">
       <div className="text-center">
         <div>
           <div className="text-2xl mb-4 font-bold text-red-700 dark:text-yellow-400 underline">Find a Team</div>
