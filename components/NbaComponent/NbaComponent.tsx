@@ -105,7 +105,7 @@ const NbaComponent:React.FC<ComponentProps> = ({user, apiKeyForSubscriber, strip
         {
           !showPlayers && !showTeams &&
           <div>
-            <div className="text-center text-lg sm:text-2xl font-bold text-blue-900 dark:text-yellow-400 mt-2 sm:mt-6 mb-1 sm:mb-2">Whether you&apos;re betting on a team or a player, make sure you&apos;re informed on their recent stats</div>
+            <div className="text-center text-lg sm:text-2xl font-bold text-blue-900 dark:text-yellow-400 mt-2 sm:mt-6 mb-1 sm:mb-2">Whether you&apos;re betting on a team or a player, or need the right fantasy pick up, make sure you&apos;re informed on their recent stats</div>
             <div className="flex justify-center mt-2 sm:mt-4">
               <Image
                 className="cursor-pointer"

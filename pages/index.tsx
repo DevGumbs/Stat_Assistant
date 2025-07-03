@@ -84,7 +84,7 @@ const Index:React.FC<ComponentProps> = ({user, apiKeyForSubscriber, stripeKey}) 
       {
         !showNba && !showNfl &&
         <div className="max-w-2xl w-full mx-auto shadow-xl rounded-xl p-4 sm:p-8 text-center border-t-8 border-blue-700 dark:border-yellow-400">
-          <p className="text-2xl sm:text-3xl font-extrabold text-blue-900 dark:text-yellow-400 mb-2 sm:mb-4">Make every bet count!</p>
+          <p className="text-2xl sm:text-3xl font-extrabold text-blue-900 dark:text-yellow-400 mb-2 sm:mb-4">Stay Informed, Know the Stats!</p>
           <p className="text-base sm:text-lg text-gray-700 dark:text-gray-200 mb-4 sm:mb-6">Review players&apos; and teams&apos; recent stats. It&apos;s the winning strategy!</p>
           <div>
             {
