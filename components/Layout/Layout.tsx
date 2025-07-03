@@ -2,13 +2,10 @@
 import React, {ReactNode} from 'react';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import { useMode } from '@/components/ModeContext/ModeContext';
 
 const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const { isDarkMode } = useMode();
-
   return (
-    <div className={isDarkMode ? 'dark-mode' : ''}>
+    <div>
       <Header />
       <main className="min-h-[550px]">
         {children}

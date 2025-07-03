@@ -15,7 +15,7 @@ const Header = () => {
       <div id="headerContainer" className="flex flex-col md:flex-row justify-between mx-[2rem] my-[3rem] items-center">  
         <div id="titleSpan" className="text-center">
           <Link href="/">
-            <p className="text-5xl">Bet Assistant</p>
+            <p className="text-5xl">Stats Assistant</p>
           </Link>          
         </div>  
         {
