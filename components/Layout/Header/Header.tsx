@@ -11,11 +11,12 @@ const Header = () => {
   const { data: session } = useSession();
   const { isDarkMode } = useMode();
 
-  return (    
+  return (
+    <>
       <div id="headerContainer" className="flex flex-col md:flex-row justify-between mx-[2rem] my-[3rem] items-center">  
         <div id="titleSpan" className="text-center">
           <Link href="/">
-            <p className="text-5xl">Bet Assistant</p>
+            <p className="text-5xl">Stats Assistant</p>
           </Link>          
         </div>  
         {
@@ -63,6 +64,8 @@ const Header = () => {
           </div>
         }                          
       </div>    
+      <div className="w-[85%] mx-auto border-b-2 mt-2" />
+    </>
   )
 };
 

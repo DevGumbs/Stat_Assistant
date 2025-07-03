@@ -25,8 +25,6 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
   const [avgSteals, setAvgSteals] = useState(0)
   const [avgBlocks, setAvgBlocks] = useState(0)
   const [avgTurnOvers, setAvgTurnOvers] = useState(0)
-  const [avgDoubleDouble, setAvgDoubleDouble] = useState(0)
-  const [avgTripleDouble, setAvgTripleDouble] = useState(0)
 
   useEffect(() => { 
     let pts: number = 0;
@@ -46,8 +44,6 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
     let steals: number = 0;
     let blocks: number = 0;
     let tos: number = 0;
-    let dubDub: number = 0;
-    let tripDub: number = 0;
 
     switch(totalGames) {
       case 1:
@@ -85,10 +81,6 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
         setAvgBlocks(blocks)
         tos = parseFloat((playerStats.slice(0,1).reduce((total: number, stats: PlayerStat) => total + stats.Turnovers, 0)/totalGames).toFixed(2))         
         setAvgTurnOvers(tos)
-        dubDub = parseFloat((playerStats.slice(0,1).reduce((total: number, stats: PlayerStat) => total + stats.DoubleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgDoubleDouble(dubDub)
-        tripDub = parseFloat((playerStats.slice(0,1).reduce((total: number, stats: PlayerStat) => total + stats.TripleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgTripleDouble(tripDub)
         break;
       case 3:  
         pts = parseFloat((playerStats.slice(0,3).reduce((total: number, stats: PlayerStat) => total + stats.Points, 0)/totalGames).toFixed(2))     
@@ -125,10 +117,6 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
         setAvgBlocks(blocks)
         tos = parseFloat((playerStats.slice(0,3).reduce((total: number, stats: PlayerStat) => total + stats.Turnovers, 0)/totalGames).toFixed(2))         
         setAvgTurnOvers(tos)
-        dubDub = parseFloat((playerStats.slice(0,3).reduce((total: number, stats: PlayerStat) => total + stats.DoubleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgDoubleDouble(dubDub)
-        tripDub = parseFloat((playerStats.slice(0,3).reduce((total: number, stats: PlayerStat) => total + stats.TripleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgTripleDouble(tripDub)
         break;
       case 5:   
         pts = parseFloat((playerStats.reduce((total: number, stats: PlayerStat) => total + stats.Points, 0)/totalGames).toFixed(2))     
@@ -165,60 +153,45 @@ const AveragesDisplay: React.FC<ComponentProps> = ({playerStats}) => {
         setAvgBlocks(blocks)
         tos = parseFloat((playerStats.reduce((total: number, stats: PlayerStat) => total + stats.Turnovers, 0)/totalGames).toFixed(2))         
         setAvgTurnOvers(tos)
-        dubDub = parseFloat((playerStats.reduce((total: number, stats: PlayerStat) => total + stats.DoubleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgDoubleDouble(dubDub)
-        tripDub = parseFloat((playerStats.reduce((total: number, stats: PlayerStat) => total + stats.TripleDoubles, 0)/totalGames).toFixed(2))         
-        setAvgTripleDouble(tripDub)
         break;
     }    
   }, [playerStats, totalGames]);
   
   return ( 
-    <div>
+    <div className="w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border border-gray-300 dark:border-gray-600 border-l-8 border-l-blue-700 dark:border-l-yellow-400 mt-6">
       <div>
-        <h4 className="text-center">{playerStats[0].Name}&apos;s averages over the last {totalGames} game(s)</h4>
-      </div>   
-      <div className="border border-1 border-black w-[85%] m-auto">
-        <div className="flex justify-evenly my-[20px] mx-auto">
-          <div className="text-center">Points: <span>{avgPoints}</span></div>
-          <div className="text-center">Assists: <span>{avgAssists}</span></div>
-          <div className="text-center">Steals: <span>{avgSteals}</span></div>
-        </div>      
-
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">FG Made: <span>{avgFgMade}</span></div>
-          <div className="text-center">FG Attempts: <span>{avgFgAtt}</span></div>
-          <div className="text-center">FG Percentage: <span>{avgFgPercent}%</span></div>
+        <h4 className="text-center text-xl font-bold text-blue-900 dark:text-yellow-400 mb-4">{playerStats[0].Name}&apos;s averages over the last {totalGames} game(s)</h4>
+      </div>
+      <div className="divide-y divide-blue-200 dark:divide-yellow-200">
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Points: <span className="font-normal">{avgPoints}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Assists: <span className="font-normal">{avgAssists}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Steals: <span className="font-normal">{avgSteals}</span></div>
         </div>
-
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">2pt Made: <span>{avg2PtMade}</span></div>
-          <div className="text-center">2pt Attempts: <span>{avg2PtAtt}</span></div>
-          <div className="text-center">2pt Percentage: <span>{avg2PtPercent}%</span></div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">FG Made: <span className="font-normal">{avgFgMade}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">FG Attempts: <span className="font-normal">{avgFgAtt}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">FG Percentage: <span className="font-normal">{avgFgPercent}%</span></div>
         </div>
-        
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">3pt Made: <span>{avg3PtMade}</span></div>
-          <div className="text-center">3pt Attempts: <span>{avg3PtAtt}</span></div>
-          <div className="text-center">3pt Percentage: <span>{avg3PtPercent}%</span></div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">2pt Made: <span className="font-normal">{avg2PtMade}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">2pt Attempts: <span className="font-normal">{avg2PtAtt}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">2pt Percentage: <span className="font-normal">{avg2PtPercent}%</span></div>
         </div>
-        
-        <div className="flex justify-evenly my-[5px] mx-auto">
-          <div className="text-center">Off. Rebounds: <span>{avgOffRebound}</span></div>
-          <div className="text-center">Def Rebounds: <span>{avgDefRebound}</span></div>
-          <div className="text-center">Total Rebounds: <span>{avgTotalRebounds}</span></div>
-        </div>      
-        
-        <div className="flex justify-evenly mt-[15px] mx-auto">
-          <div className="text-center">Blocks: <span>{avgBlocks}</span></div>
-          <div className="text-center">Turnovers: <span>{avgTurnOvers}</span></div>         
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">3pt Made: <span className="font-normal">{avg3PtMade}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">3pt Attempts: <span className="font-normal">{avg3PtAtt}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">3pt Percentage: <span className="font-normal">{avg3PtPercent}%</span></div>
         </div>
-        <div>        
-          <div className="flex justify-evenly m-[10px]">
-            <div className="text-center">Double Doubles: <span>{avgDoubleDouble}</span></div>
-            <div className="text-center">Triple Doubles: <span>{avgTripleDouble}</span></div>              
-          </div>          
-        </div>   
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Off. Rebounds: <span className="font-normal">{avgOffRebound}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Def. Rebounds: <span className="font-normal">{avgDefRebound}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Total Rebounds: <span className="font-normal">{avgTotalRebounds}</span></div>
+        </div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Blocks: <span className="font-normal">{avgBlocks}</span></div>
+          <div className="text-center font-semibold text-blue-900 dark:text-yellow-400">Turn Overs: <span className="font-normal">{avgTurnOvers}</span></div>
+        </div>
       </div>
     </div>
   )

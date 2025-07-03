@@ -158,45 +158,40 @@ const AveragesDisplay: React.FC<ComponentProps> = ({teamStats}) => {
   }, [teamStats, totalGames]);
   
   return ( 
-    <div>
+    <div className="w-full max-w-xl mx-auto shadow-lg rounded-xl p-6 border border-gray-300 dark:border-gray-600 border-l-8 border-l-red-700 dark:border-l-yellow-400 mt-6">
       <div>
-        <h4 className="text-center">{teamStats[0].Name}&apos;s averages over the last {totalGames} game(s)</h4>
-      </div>   
-      <div className="border border-1 border-black w-[85%] m-auto">
-        <div className="flex justify-evenly my-[20px] mx-auto">
-          <div className="text-center">Points: <span>{avgPoints}</span></div>
-          <div className="text-center">Assists: <span>{avgAssists}</span></div>
-          <div className="text-center">Steals: <span>{avgSteals}</span></div>
-        </div>      
-
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">FG Made: <span>{avgFgMade}</span></div>
-          <div className="text-center">FG Attempts: <span>{avgFgAtt}</span></div>
-          <div className="text-center">FG Percentage: <span>{avgFgPercent}%</span></div>
+        <h4 className="text-center text-xl font-bold text-red-700 dark:text-yellow-400 mb-4">{teamStats[0].Name}&apos;s averages over the last {totalGames} game(s)</h4>
+      </div>
+      <div className="divide-y divide-red-200 dark:divide-yellow-200">
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Points: <span className="font-normal">{avgPoints}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Assists: <span className="font-normal">{avgAssists}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Steals: <span className="font-normal">{avgSteals}</span></div>
         </div>
-
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">2pt Made: <span>{avg2PtMade}</span></div>
-          <div className="text-center">2pt Attempts: <span>{avg2PtAtt}</span></div>
-          <div className="text-center">2pt Percentage: <span>{avg2PtPercent}%</span></div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">FG Made: <span className="font-normal">{avgFgMade}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">FG Attempts: <span className="font-normal">{avgFgAtt}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">FG Percentage: <span className="font-normal">{avgFgPercent}%</span></div>
         </div>
-        
-        <div className="flex justify-evenly my-[10px] mx-auto">
-          <div className="text-center">3pt Made: <span>{avg3PtMade}</span></div>
-          <div className="text-center">3pt Attempts: <span>{avg3PtAtt}</span></div>
-          <div className="text-center">3pt Percentage: <span>{avg3PtPercent}%</span></div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">2pt Made: <span className="font-normal">{avg2PtMade}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">2pt Attempts: <span className="font-normal">{avg2PtAtt}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">2pt Percentage: <span className="font-normal">{avg2PtPercent}%</span></div>
         </div>
-        
-        <div className="flex justify-evenly my-[5px] mx-auto">
-          <div className="text-center">Off. Rebounds: <span>{avgOffRebound}</span></div>
-          <div className="text-center">Def Rebounds: <span>{avgDefRebound}</span></div>
-          <div className="text-center">Total Rebounds: <span>{avgTotalRebounds}</span></div>
-        </div>      
-        
-        <div className="flex justify-evenly mt-[15px] mx-auto">
-          <div className="text-center">Blocks: <span>{avgBlocks}</span></div>
-          <div className="text-center">Turnovers: <span>{avgTurnOvers}</span></div>         
-        </div>  
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">3pt Made: <span className="font-normal">{avg3PtMade}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">3pt Attempts: <span className="font-normal">{avg3PtAtt}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">3pt Percentage: <span className="font-normal">{avg3PtPercent}%</span></div>
+        </div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Off. Rebounds: <span className="font-normal">{avgOffRebound}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Def. Rebounds: <span className="font-normal">{avgDefRebound}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Total Rebounds: <span className="font-normal">{avgTotalRebounds}</span></div>
+        </div>
+        <div className="flex flex-wrap justify-evenly my-4">
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Blocks: <span className="font-normal">{avgBlocks}</span></div>
+          <div className="text-center font-semibold text-red-700 dark:text-yellow-400">Turn Overs: <span className="font-normal">{avgTurnOvers}</span></div>
+        </div>
       </div>
     </div>
   )

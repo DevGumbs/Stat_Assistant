@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stat Assistant
+
+A modern, mobile-friendly sports stats web app for NBA and NFL fans, bettors, and analysts. Review recent player and team stats, compare performances, and make informed decisions—all in a beautiful, responsive interface.
+
+![Stat Assistant Screenshot](./public/screenshot.png)
+
+## Features
+- NBA and NFL stats lookup for players and teams
+- Subscriber and free API key support (SportsData.io)
+- Modern, mobile-first UI with dark mode
+- Secure Stripe integration for subscriptions
+- Responsive, sports-themed design
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/stat-assistant.git
+cd stat-assistant
+```
 
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Configure environment variables
+Copy `.env.example` to `.env` and fill in your real API keys and secrets:
+```bash
+cp .env.example .env
+```
+
+### 4. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
+Deploy easily to [Vercel](https://vercel.com/) or your preferred platform. Make sure to set all required environment variables in your deployment settings.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## Learn More
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a pull request
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+_Stat Assistant is not affiliated with or endorsed by the NBA, NFL, or SportsData.io. All data provided is for informational purposes only._

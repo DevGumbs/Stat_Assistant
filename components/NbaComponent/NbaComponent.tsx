@@ -100,96 +100,84 @@ const NbaComponent:React.FC<ComponentProps> = ({user, apiKeyForSubscriber, strip
   }
 
   return (
-    <div className="">
+    <div className="w-full max-w-3xl mx-auto shadow-xl rounded-xl p-3 sm:p-6 md:p-10 border border-gray-300 dark:border-gray-600 border-l-8 border-l-blue-700 dark:border-l-yellow-400 mt-2 sm:mt-4">
       <div>
         {
-          !showPlayers && !showTeams && 
+          !showPlayers && !showTeams &&
           <div>
-            <div className="text-center text-2xl mt-[50px]">Whether you&apos;re betting on a team or a player, make sure you&apos;re informed on their recent stats</div>
-            <div className="flex justify-center mt-[40px]">
+            <div className="text-center text-lg sm:text-2xl font-bold text-blue-900 dark:text-yellow-400 mt-2 sm:mt-6 mb-1 sm:mb-2">Whether you&apos;re betting on a team or a player, make sure you&apos;re informed on their recent stats</div>
+            <div className="flex justify-center mt-2 sm:mt-4">
               <Image
-                className=""
+                className="cursor-pointer"
                 src={isDarkMode ? infoIconWhite : infoIconBlack}
-                alt="alt"
-                width="20"
-                height="20"
+                alt="Info Icon"
+                width="24"
+                height="24"
                 onClick={handleOpenModal}
               />
             </div>
             {
-              showDisclaimer &&          
-              <DisclaimerModal isOpen={showDisclaimer} onClose={handleCloseModal} />          
+              showDisclaimer &&
+              <DisclaimerModal isOpen={showDisclaimer} onClose={handleCloseModal} />
             }
             {
               !user?.isSubscriber &&
               <div>
-              <p                 
-                className="text-center mt-[10px]"
-              >
-                <span className="underline" onClick={() => {handleJoinButtonClick(user, stripeKey)}}>Suscribe here</span> to use without an API Key.
-              </p>
-              <p className="text-center mt-[25px]">OR</p>
+                <p className="text-center mt-4">
+                  <span className="underline text-blue-700 dark:text-yellow-400 cursor-pointer hover:text-blue-900 dark:hover:text-yellow-300" onClick={() => {handleJoinButtonClick(user, stripeKey)}}>Subscribe here</span> to use without an API Key.
+                </p>
+                <p className="text-center mt-6 text-gray-500 dark:text-gray-400">OR</p>
               </div>
             }
-            <p className="text-center mt-[25px]">
-              - 
-              { !user?.isSubscriber &&
-                <span> enter your API key and </span> 
-              }
-              &nbsp;click a bet type to get started -
+            <p className="text-center mt-6 text-base text-gray-600 dark:text-gray-300">
+              - { !user?.isSubscriber && <span>enter your API key and </span> }click a bet type to get started -
             </p>
           </div>
         }
       </div>
       {
-        !user?.isSubscriber && 
+        !user?.isSubscriber &&
         <div>
-          <div className="text-center mt-[45px]">
-            <label>Enter SportsData.io API Key:&nbsp;</label>
+          <div className="text-center mt-10">
+            <label className="font-semibold">Enter SportsData.io API Key:&nbsp;</label>
             <input 
               type="text"
-              className="border border-1 border-black"
+              className="border border-gray-400 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-700 dark:bg-gray-700 dark:text-white"
               value={apiKey}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setApiKey(e.target.value)}}/>
           </div>
-          <p className="w-[35%] text-center mx-auto mb-[45px] text-xxs">* you can enter &apos;test&apos; for an API Key to demo the process and receive mock data<br/>
-            for player: Bradley Beal or Team: Phoenix Suns *</p>          
+          <p className="w-full md:w-1/2 text-center mx-auto mb-10 text-xs text-gray-500 dark:text-gray-400 mt-2">* you can enter &apos;test&apos; for an API Key to demo the process and receive mock data<br/>
+            for player: Bradley Beal or Team: Phoenix Suns *</p>
         </div>
       }
-      
-      <div className="flex justify-around">
-        <div className="">
+      <div className="flex flex-col md:flex-row justify-around gap-6 mt-6 mb-4">
+        <div>
           {
-            showPlayers &&
-            <div className="p-3 text-xl border border-1 rounded-lg" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)' }} onClick={() => {setShowPlayers(!showPlayers); setShowTeams(false)}}>Player Bet</div>
-          }
-          {
-            !showPlayers &&
-            <div className="p-3 border border-1 rounded-lg" onClick={() => {loadPlayers(apiKey)}}>Player Bet</div>
+            showPlayers ?
+            <div className="p-3 text-xl border-2 border-blue-700 dark:border-yellow-400 rounded-lg text-blue-900 dark:text-yellow-900 font-bold shadow cursor-pointer mb-2" onClick={() => {setShowPlayers(!showPlayers); setShowTeams(false)}}>Player Bet</div>
+            :
+            <div className="p-3 border-2 border-blue-700 dark:border-yellow-400 rounded-lg text-blue-900 dark:text-yellow-400 font-semibold shadow cursor-pointer mb-2 transition" onClick={() => {loadPlayers(apiKey)}}>Player Bet</div>
           }
         </div>
-        <div className="">
+        <div>
           {
-            showTeams &&
-            <div className="p-3 text-xl border border-1 rounded-lg" onClick={() => {setShowTeams(!showTeams); setShowPlayers(false)}}>Team Bet</div>
-          }
-          {
-            !showTeams &&
-            <div className="p-3 border border-1 rounded-lg" onClick={() => {loadTeams(apiKey)}}>Team Bet</div>
+            showTeams ?
+            <div className="p-3 text-xl border-2 border-red-700 dark:border-yellow-400 rounded-lg text-red-900 dark:text-yellow-900 font-bold shadow cursor-pointer mb-2" onClick={() => {setShowTeams(!showTeams); setShowPlayers(false)}}>Team Bet</div>
+            :
+            <div className="p-3 border-2 border-red-700 dark:border-yellow-400 rounded-lg text-red-900 dark:text-yellow-400 font-semibold shadow cursor-pointer mb-2 transition" onClick={() => {loadTeams(apiKey)}}>Team Bet</div>
           }
         </div>
       </div>
-      
       <div>
         {
-          showPlayers && 
+          showPlayers &&
           <PlayerNbaComponent activePlayers={activeNbaPlayers} apiKey={apiKey}/>
         }
         {
-          showTeams && 
+          showTeams &&
           <TeamNbaComponent activeNbaTeams={activeNbaTeams} apiKey={apiKey}/>
         }
-      </div>         
+      </div>
     </div>
   )
 };
